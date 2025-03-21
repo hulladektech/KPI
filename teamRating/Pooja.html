@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Rating</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eef2f3;
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            color:#000000;
+            margin-bottom: 20px;
+            font-size: 28px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .team-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .team-list li {
+            background: #ffffff;
+            margin: 15px;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            align-items: center;
+            width: 250px;
+            text-align: left;
+        }
+        .team-list li:hover {
+            transform: scale(1.07);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .team-list img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+            border: 2px solid #1eb567;
+        }
+        .team-list a {
+            text-decoration: none;
+            color: #000000;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .team-list a:hover {
+            color: #1a4b31;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Feedback Rating Q4 24-25</h1>
+        <ul class="team-list" id="team-list">
+        </ul>
+    </div>
+
+    <script>
+        const teamMembers = [
+            { name: "Krish Pasari", link: "microsoft-edge:https://docs.google.com/spreadsheets/d/1eDWtJ2M4TBlgAN0dYV28RVi-bfjW9CmseZkiP_wcTvU/edit?gid=1320322551#gid=1320322551" }
+        ];
+
+        const teamListElement = document.getElementById("team-list");
+        
+        teamMembers.forEach(member => {
+            const listItem = document.createElement("li");
+            const img = document.createElement("img");
+            img.src = "e.jpg"; 
+            img.alt = member.name;
+            const link = document.createElement("a");
+            link.href = member.link;
+            link.target = "_blank";
+            link.textContent = member.name;
+            
+            listItem.appendChild(img);
+            listItem.appendChild(link);
+            teamListElement.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>
